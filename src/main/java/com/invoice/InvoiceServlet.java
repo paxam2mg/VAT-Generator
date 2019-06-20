@@ -2,6 +2,7 @@ package com.invoice;
 
 import com.invoice.data.DBController;
 import com.invoice.data.Product;
+import org.apache.pdfbox.pdmodel.PDDocument;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
@@ -19,10 +20,10 @@ public class InvoiceServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        String name = request.getParameter("name");
-        String nettoPrice = request.getParameter("netto-price");
-        String vat = request.getParameter("vat");
-        Product product = new Product(name, nettoPrice, vat); // Creating new product with sent specification.
+
+        Invoice invoice = getInvoiceFromRequest(request);
+
+        Product product = new Product("", "", ""); // Creating new product with sent specification.
 
         DBController databaseController = new DBController();
 
@@ -31,10 +32,10 @@ public class InvoiceServlet extends HttpServlet {
         List<Product> productList = new ArrayList<>(); // Creating empty list of products.
         productList.addAll(databaseController.getProductsList()); // Adding all products from database to created list.
 
-        ByteArrayOutputStream byteArrayOutputStream = new InvoiceCreator().create(productList); // Creating PDF with list of products and saving it as output.
+        ByteArrayOutputStream byteArrayOutputStream = new InvoiceCreator().create(invoice); // Creating PDF with list of products and saving it as output.
 
         response.setContentType("application/pdf");
-        response.addHeader("Content-Disposition", "attachment; filename=" + "Invoice-" + name + ".pdf");
+        response.addHeader("Content-Disposition", "attachment; filename=" + "Invoice-" + "" + ".pdf");
         response.setContentLength(byteArrayOutputStream.size());
 
         try {
@@ -45,6 +46,36 @@ public class InvoiceServlet extends HttpServlet {
             e.printStackTrace();
         }
 
+    }
+
+
+    public Invoice getInvoiceFromRequest(HttpServletRequest request){
+        Invoice invoice = new Invoice();
+        invoice.setFaktura(request.getParameter("faktura"));
+        invoice.setNumerFaktury(request.getParameter("numer-faktury"));
+        invoice.setDataWFaktury(request.getParameter("data-w-faktury"));
+        invoice.setMiejsceFaktury(request.getParameter("miejsce-faktury"));
+
+        invoice.setNameS(request.getParameter("name-s"));
+        invoice.setAdresS(request.getParameter("adres-s"));
+        invoice.setAdresS2(request.getParameter("adres-s2"));
+        invoice.setNIPS(request.getParameter("NIP-s"));
+        invoice.setREGONS(request.getParameter("REGON-s"));
+        invoice.setDodatekS(request.getParameter("dodatek-s"));
+
+        invoice.setWaluta(request.getParameter("waluta"));
+
+        invoice.setNettoPrice(request.getParameter("netto-price"));
+        invoice.setVat(request.getParameter("vat"));
+
+        invoice.setNameN(request.getParameter("name-n"));
+        invoice.setAdresN(request.getParameter("adres-n"));
+        invoice.setAdresN2(request.getParameter("adres-n2"));
+        invoice.setNIPN(request.getParameter("NIP-n"));
+        invoice.setREGONN(request.getParameter("REGON-n"));
+        invoice.setDodatekN(request.getParameter("dodatek-n"));
+
+        return invoice;
     }
 
 }
