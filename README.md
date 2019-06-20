@@ -1,2 +1,0 @@
-# VAT-Generator
-WAP Projekt
