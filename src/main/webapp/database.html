@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database management</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<div class="container">
+
+    <div>
+        <h2>Sprawdź informacje o wszystkich produktach zawartych w bazie:</h2>
+        <form action="select.php" method="post">
+            <input name="submit" type="submit" value="Wyświetl">
+        </form>
+
+    </div>
+    <div>
+        <h2>Wprowadź informacje na temat nowego produktu:</h2>
+        <form action="insert.php" method="post">
+            <p>
+                <label for="name">Nazwa produktu:</label>
+                <input type="text" name="name">
+            </p>
+            <p>
+                <label for="netto">Wartość netto:</label>
+                <input type="text" name="netto">
+            </p>
+            <p>
+                <label for="vat">VAT:</label>
+                <input type="text" name="vat">
+            </p>
+            <input type="submit" value="Dodaj">
+        </form>
+    </div>
+
+    <div>
+        <h2>Podaj id produktu, który chcesz usunąć:</h2>
+        <form action="delete.php" method="post">
+            <p>
+                <label for="id">ID:</label>
+                <input type="text" name="id">
+            </p>
+            <input type="submit" value="Usuń">
+        </form>
+    </div>
+</div>
+</body>
+</html>
