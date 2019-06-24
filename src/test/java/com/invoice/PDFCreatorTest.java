@@ -30,17 +30,22 @@ public class PDFCreatorTest {
 
         Invoice invoice = new Invoice();
 
-        invoice.setFaktura("faktura");
+        invoice.setFaktura("VAT");
         invoice.setNumerFaktury("F/2029/01");
         invoice.setDataWFaktury("21-10-2019");
         invoice.setMiejsceFaktury("Poznan");
 
+        invoice.setData("23-09-2019");
+        invoice.setTypDaty("Data dostawy");
+        invoice.setFormaPlatnosci("Przelew");
+
         invoice.setNameS("Guzikowo");
+
         invoice.setAdresS("Gorna 3");
         invoice.setAdresS2("60-699 Poznan");
         invoice.setNIPS("1381398131");
         invoice.setREGONS("343414112");
-        invoice.setDodatekS("dodatek-s");
+        invoice.setDodatekS("W bramie");
 
         invoice.setWaluta("PLN");
 
@@ -52,7 +57,7 @@ public class PDFCreatorTest {
         invoice.setAdresN2("39-233 Kolo");
         invoice.setNIPN("1343141311");
         invoice.setREGONN("13441331");
-        invoice.setDodatekN("dodatek-n");
+        invoice.setDodatekN("Pietro 3");
 
         invoice.setListOfProducts(getProductList());
 
@@ -64,7 +69,7 @@ public class PDFCreatorTest {
 
     private List<Product> getProductList(){
         List<Product> listOfProducts = new ArrayList<>();
-        listOfProducts.add(new Product("Krzeslo", "100", "23", "2"));
+        listOfProducts.add(new Product("Krzeslo", "100", "23"));
         listOfProducts.add(new Product("Krzeslo", "100", "23", "2"));
         listOfProducts.add(new Product("Krzeslo", "100", "23", "2"));
         listOfProducts.add(new Product("Wazon", "152.55", "7", "3"));

@@ -69,12 +69,12 @@ public class PDFCreator {
 
     private void printHeader() throws IOException,NullPointerException {
         PDFPrinter justTextPrinter = new PDFPrinter(content, fontBasic, 9);
-        PDFPrinter headerTextPrinter = new PDFPrinter(content, fontBasic, 12);
+        PDFPrinter headerTextPrinter = new PDFPrinter(content, fontBasic, 13);
         PDFPrinter bigHeaderTextPrinter = new PDFPrinter(content, fontBasic, 15);
 
-        bigHeaderTextPrinter.putText(340, 760, "FAKTURA VAT");
-        headerTextPrinter.putText(340, 740, "nr " + invoice.getNumerFaktury());
-        justTextPrinter.putText(340, 720, "Data wystawienia: " + invoice.getDataWFaktury());
+        bigHeaderTextPrinter.putText(360, 760, "FAKTURA VAT");
+        headerTextPrinter.putText(360, 740, "nr " + invoice.getFaktura() + "/" + invoice.getNumerFaktury());
+        justTextPrinter.putText(360, 720, "Data wystawienia: " + invoice.getDataWFaktury());
 
         int movement = -12;
 
@@ -82,14 +82,19 @@ public class PDFCreator {
         justTextPrinter.putText(50, 790 + movement, invoice.getNameS());
         justTextPrinter.putText(50, 790 + movement * 2, invoice.getAdresS());
         justTextPrinter.putText(50, 790 + movement * 3, invoice.getAdresS2());
-        justTextPrinter.putText(50, 790 + movement * 4, "NIP: " + invoice.getNIPS());
+        justTextPrinter.putText(150, 790 + movement, "NIP: " + invoice.getNIPS());
+        justTextPrinter.putText(150, 790 + movement * 2, "REGON: " + invoice.getREGONS());
+        justTextPrinter.putText(150, 790 + movement * 3, "Dotatkowa informacja: " + invoice.getDodatekS());
+
 
 
         headerTextPrinter.putText(50, 703, "Nabywca");
         justTextPrinter.putText(50, 700 + movement, invoice.getNameN());
         justTextPrinter.putText(50, 700 + movement * 2, invoice.getAdresN());
         justTextPrinter.putText(50, 700 + movement * 3, invoice.getAdresN2());
-        justTextPrinter.putText(50, 700 + movement * 4, "NIP: " + invoice.getNIPN());
+        justTextPrinter.putText(150, 700 + movement, "NIP: " + invoice.getNIPN());
+        justTextPrinter.putText(150, 700 + movement * 2, "REGON: " + invoice.getREGONN());
+        justTextPrinter.putText(150, 700 + movement * 3, "Dodatkowa informacja: " + invoice.getDodatekN());
 
     }
 
@@ -156,6 +161,12 @@ public class PDFCreator {
 
     private void printPaymentInfo() throws IOException,NullPointerException {
         PDFPrinter justTextPrinter = new PDFPrinter(content, fontBasic, 9);
+
+        int movement = -60;
+
+        justTextPrinter.putText(80, lastProductsRowPosition + movement,"Forma platnosci: " + invoice.getFormaPlatnosci() );
+        justTextPrinter.putText(80, lastProductsRowPosition + movement - 15, invoice.getTypDaty() + ": " + invoice.getData() );
+
 
     }
 

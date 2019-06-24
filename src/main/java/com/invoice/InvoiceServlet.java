@@ -63,6 +63,9 @@ public class InvoiceServlet extends HttpServlet {
         invoice.setNumerFaktury(request.getParameter("numer-faktury"));
         invoice.setDataWFaktury(request.getParameter("data-w-faktury"));
         invoice.setMiejsceFaktury(request.getParameter("miejsce-faktury"));
+        invoice.setData(request.getParameter("data"));
+        invoice.setTypDaty(request.getParameter("typ-daty"));
+        invoice.setFormaPlatnosci(request.getParameter("forma-platnosci"));
 
         invoice.setNameS(request.getParameter("name-s"));
         invoice.setAdresS(request.getParameter("adres-s"));

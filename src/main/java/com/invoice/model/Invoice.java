@@ -10,6 +10,10 @@ public class Invoice {
     private String numerFaktury;
     private String dataWFaktury;
     private String miejsceFaktury;
+    private String data;
+    private String formaPlatnosci;
+    private String typDaty;
+
     private String nameS;
     private String adresS;
     private String adresS2;
@@ -30,6 +34,30 @@ public class Invoice {
 
     public List<Product> getListOfProducts() {
         return listOfProducts;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getFormaPlatnosci() {
+        return formaPlatnosci;
+    }
+
+    public void setFormaPlatnosci(String formaPlatnosci) {
+        this.formaPlatnosci = formaPlatnosci;
+    }
+
+    public String getTypDaty() {
+        return typDaty;
+    }
+
+    public void setTypDaty(String typDaty) {
+        this.typDaty = typDaty;
     }
 
     public void setListOfProducts(List<Product> listOfProducts) {
