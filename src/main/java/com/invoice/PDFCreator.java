@@ -78,7 +78,7 @@ public class PDFCreator {
 
         int movement = -12;
 
-        headerTextPrinter.putText(50, 793, "Sprzedawca");
+        headerTextPrinter.putText(52, 796, "Sprzedawca");
         justTextPrinter.putText(50, 790 + movement, invoice.getNameS());
         justTextPrinter.putText(50, 790 + movement * 2, invoice.getAdresS());
         justTextPrinter.putText(50, 790 + movement * 3, invoice.getAdresS2());
@@ -88,7 +88,7 @@ public class PDFCreator {
 
 
 
-        headerTextPrinter.putText(50, 703, "Nabywca");
+        headerTextPrinter.putText(52, 706, "Nabywca");
         justTextPrinter.putText(50, 700 + movement, invoice.getNameN());
         justTextPrinter.putText(50, 700 + movement * 2, invoice.getAdresN());
         justTextPrinter.putText(50, 700 + movement * 3, invoice.getAdresN2());
