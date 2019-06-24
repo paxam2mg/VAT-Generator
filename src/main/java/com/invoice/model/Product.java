@@ -10,7 +10,7 @@ public class Product {
     private String quantity;
 
     public String getQuantity() {
-        return quantity;
+            return quantity;
     }
 
     public void setQuantity(String quantity) {
@@ -24,7 +24,9 @@ public class Product {
         this.name = name;
         this.nettoPrice = nettoPrice;
         this.VAT = VAT;
+        this.quantity = "1";
     }
+
     public Product(String name, String nettoPrice, String VAT, String quantity) {
         this.name = name;
         this.nettoPrice = nettoPrice;
@@ -53,6 +55,7 @@ public class Product {
         }
         return "";
     }
+
     public void setNettoPrice(String nettoPrice) {
         this.nettoPrice = nettoPrice;
     }
