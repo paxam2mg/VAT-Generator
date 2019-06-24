@@ -1,0 +1,28 @@
+body {
+background-color:AliceBlue;
+font-family: "Georgia", Times, serif;
+margin: 0px;
+padding: 0px;
+}
+
+h3 {
+text-transform:uppercase;
+font-weight: normal;
+}
+
+h3.border {
+border-style: solid;
+border-width: 0px 0px 2px;
+border-color: gray;
+}
+
+p {
+font-style: italic;
+}
+
+div {
+padding-top: 20px;
+padding-left: 60px;
+padding-right: 100px;
+font-size: 16px;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Generator faktur</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+
+<header>
+    <p><h2>Generator faktur VAT</h2></p>
+</header>
+
+<section>
+<div>
+    <a href="database.html"><input name="submit" type="submit" value="Zarządzaj bazą"></a>
+    <br><br>
+</div>
+</section>
+<form method="post" action="invoice">
+<section class="flex">
+    <div class="block">
+        <h3 class="border">dane faktury</h3>
+        <p>Faktura VAT: <input type="text" id="faktura-input" name="faktura"/> <br> <br></p>
+        <p>Nr Faktury: <input type="text" id="numerfaktury" name="numer-faktury"/> <br> <br></p>
+    </div>
+    <div class="block">
+        <h3 class="border">data i miejsce wystawienia faktury</h3>
+        <p>Data wystawienia: <input type="date" id="data-w-faktury" name="data-w-faktury"/> <br> <br></p>
+        <p>Miejsce wystawienia: <input type="text" id="miejsce-faktury" name="miejsce-faktury"/> <br> <br></p>
+        <SELECT name="data-typ">
+            <OPTION Value="Wybor">Wybierz typ daty</OPTION>
+            <OPTION Value="Data dostawy">Data dokonania dostawy towarów</OPTION>
+            <OPTION Value="Data uslugi">Data wykonania usługi</OPTION>
+            <OPTION Value="Data sprzedazy">Data sprzedaży</OPTION>
+        </SELECT>
+        <input type="date" id="data-input" name="data"/>
+        <br> <br>
+    </div>
+</section>
+
+<section class="flex">
+    <div class="block">
+        <h3 class="border">Dane sprzedawcy</h3>
+        <p>Nazwa firmy: <input type="text"  name="name-s"/> <br> <br></p>
+        <p>Adres firmy: <input type="text" name="adres-s"/> <br> <br></p>
+        <p>Adres firmy cd.: <input type="text"  name="adres-s2"/> <br> <br></p>
+        <p>NIP: <input type="text"  name="NIP-s"/> <br> <br></p>
+        <p>REGON: <input type="text"  name="REGON-s"/> <br> <br></p>
+        <p>Dodatkowe informacje: <input type="text"  name="dodatek-s"/> <br> <br></p>
+    </div>
+    <div class="block">
+        <h3 class="border">Dane nabywcy</h3>
+        <p>Nazwa firmy: <input type="text" id="say-s-hello-text-input" name="name-n"/> <br> <br></p>
+        <p>Adres firmy: <input type="text" id="adres-s-input" name="adres-n"/> <br> <br></p>
+        <p>Adres firmy cd.: <input type="text" id="adres-s2-input" name="adres-n2"/> <br> <br></p>
+        <p>NIP: <input type="text" id="NIP-input" name="NIP-n"/> <br> <br></p>
+        <p>REGON: <input type="text" id="REGON-input" name="REGON-n"/> <br> <br></p>
+        <p>Dodatkowe informacje: <input type="text" id="dodatek-input" name="dodatek-n"/> <br></p>
+    </div>
+</section>
+
+<section class="flex">
+<div>
+    <h3 class="border">Produkty</h3>
+    <p>Nazwa produktu: <input type="text"  name="product-name"/> <br> <br></p>
+    <p>Ilość: <input type="text" name="quantity"/> <br> <br></p>
+</div>
+    <div class="sumy">
+        <h4>suma netto</h4>
+        <h4>suma vat</h4>
+        <h4>suma brutto</h4>
+    </div>
+
+</section>
+
+
+
+<section>
+
+</section>
+
+<section class="flex">
+    <div>
+        <h3 class="border">informacje o płatności</h3>
+        <p>Forma płatności: <SELECT name="f-platnosci">
+            <OPTION Value="Gotówka">Gotówka</OPTION>
+            <OPTION Value="Przelew">Przelew</OPTION>
+        </SELECT>
+            <br> <br></p>
+        <p>Waluta: <SELECT name="waluta">
+            <OPTION Value="PLN">PLN</OPTION>
+            <OPTION Value="USD">USD</OPTION>
+            <OPTION Value="EUR">EUR</OPTION>
+        </SELECT>
+            <br> <br></p>
+        <p>Forma płatności:
+            <SELECT name="f-platnosci">
+                <OPTION Value="Gotówka">Gotówka</OPTION>
+                <OPTION Value="Przelew">Przelew</OPTION>
+            </SELECT>
+            <br> <br>
+            <br> <br></p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <input type="submit" id="send-button" value="Send"/>
+    </div>
+</section>
+
+
+
+
+
+</form>
+</body>
+</html>
