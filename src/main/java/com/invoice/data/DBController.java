@@ -39,9 +39,9 @@ public class DBController {
         }
     }
 
-    public Product getProducts(String name) {
+    public Product getProduct(String name) {
 
-        Product product;
+        Product product = new Product();
 
         Connection connection = getConnection();
         Statement statement;
@@ -63,8 +63,9 @@ public class DBController {
         }
 
         try {
-            product = new Product(result.getString(2), result.getString(3), result.getString(4));
-
+            while (result.next()) {
+                product = new Product(result.getString(2), result.getString(3), result.getString(4));
+            }
         } catch (SQLException e) {
             System.out.println("Error. Problem reading data: " + e);
             return null;
