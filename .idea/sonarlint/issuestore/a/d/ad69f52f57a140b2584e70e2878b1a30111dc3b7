@@ -1,0 +1,11 @@
+
+dsquid:S2095$"HUse try-with-resources or close this "PDDocument" in a "finally" clause.(³’’ïøÿÿÿÿ
+?squid:S1148>"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+bsquid:S2147?"DCombine this catch with the one at line 61, which has the same body.(ßÈ´8ÎæÉ¸-
+Fsquid:S1148@"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÎæÉ¸-
+Xsquid:S1481"4Remove this unused "justTextPrinter" local variable.(´ßÍ§şÿÿÿÿ8¼óèÄ¸-
+Ksquid:S1068"/Remove this unused "fontOblique" private field.(š÷ì’ÿÿÿÿÿ
+Rsquid:S1068"6Remove this unused "fontBoldAndOblique" private field.(Å”ïüÿÿÿÿ
+gsquid:S1854"CRemove this useless assignment to local variable "justTextPrinter".(´ßÍ§şÿÿÿÿ8¼óèÄ¸-
+bsquid:HiddenFieldCheck-";Rename "content" which hides the field declared at line 21.(èÃ²™üÿÿÿÿ
+ysquid:S40878"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(Ê÷Â

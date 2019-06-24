@@ -1,0 +1,28 @@
+
+O
+squid:S106g"9Replace this use of System.out or System.err by a logger.(÷’à«
+_squid:S2259"HA "NullPointerException" could be thrown; "connection" is nullable here.(’ôÁì
+fsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(’ôÁì
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(¯ÍúÃúÿÿÿÿ
+O
+squid:S106G"9Replace this use of System.out or System.err by a logger.(ÏÁ‹­
+dsquid:S22594"HA "NullPointerException" could be thrown; "connection" is nullable here.(‡²€·ıÿÿÿÿ
+Bsquid:S1168H"+Return an empty collection instead of null.(¥¹ï
+Bsquid:S11687"+Return an empty collection instead of null.(¥¹ï
+Bsquid:S1168O"+Return an empty collection instead of null.(¥¹ï
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ¯³ûÿÿÿÿ
+Bsquid:S1168>"+Return an empty collection instead of null.(¥¹ï
+O
+squid:S106N"9Replace this use of System.out or System.err by a logger.(ëÍˆÆ
+N
+squid:S106="9Replace this use of System.out or System.err by a logger.(ş³Ëc
+csquid:S2095;"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(õå¶åúÿÿÿÿ
+T
+squid:S1066"9Replace this use of System.out or System.err by a logger.(Ğ¯³ûÿÿÿÿ
+T
+squid:S106`"9Replace this use of System.out or System.err by a logger.(æïé€ÿÿÿÿÿ
+csquid:S20954"GUse try-with-resources or close this "Statement" in a "finally" clause.(‡²€·ıÿÿÿÿ
+O
+squid:S106&"9Replace this use of System.out or System.err by a logger.(ëÍˆÆ
