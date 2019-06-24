@@ -29,3 +29,14 @@ Y
 0src/main/java/com/invoice/data/DBController.java,e\5\e5306525c17eef10543b116ef165d4c86d2b74c0
 Z
 *src/main/java/com/invoice/data/DBInfo.java,5\6\561ee7ab55463854456c1a4a76b8c0a67bdc691d
+M
+src/main/webapp/database.html,6\4\64988352dd1bdc01db5968ecb7da6ae711ae65e8
+J
+src/main/webapp/insert.php,a\d\ad517079b21cc4fad501cfbb1a3be379e5686bc5
+J
+src/main/webapp/delete.php,9\c\9ce7245bfd0ed79b97649ccba9b14eff8e8a1804
+J
+src/main/webapp/select.php,5\9\594d388fde34e4832a38b4a0d8ca303c9e555cf1
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
