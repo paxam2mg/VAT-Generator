@@ -166,7 +166,7 @@ public class PDFCreator {
         int movement = -150;
 
         justTextPrinter.putText(110, lastProductsRowPosition + movement,"..........................." );
-        justTextPrinter.putText(120, lastProductsRowPosition + movement - 10,"Sprzdawca" );
+        justTextPrinter.putText(120, lastProductsRowPosition + movement - 10,"Sprzedawca" );
         justTextPrinter.putText(430, lastProductsRowPosition + movement, "...........................");
         justTextPrinter.putText(443, lastProductsRowPosition + movement - 10, "Nabywca");
 
