@@ -3,7 +3,10 @@ package com.invoice;
 import com.invoice.data.DBController;
 import com.invoice.model.Invoice;
 import com.invoice.model.Product;
+import jdk.nashorn.internal.ir.RuntimeNode;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,28 +20,39 @@ import java.util.List;
 @WebServlet(name = "InvoiceServlet", urlPatterns = {"invoice"}, loadOnStartup = 1)
 public class InvoiceServlet extends HttpServlet {
 
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response) throws ServletException, IOException {
+
+        DBController dbc = new DBController();
+        List<Product> productList = dbc.getProductsList();
+
+        request.setAttribute("productList", productList);
+
+        RequestDispatcher disp = request
+                .getRequestDispatcher("index.jsp");
+        disp.forward(request, response);
+
+    }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getParameter("add") != null) {
+            addProduct(request);
+            doGet(request, response);
+            return;
+        }
         Invoice invoice = getInvoiceFromRequest(request);
 
-        DBController databaseController = new DBController();
         List<Product> productList = new ArrayList<>(); // Creating empty list of products.
 
-        //Product product = new Product("nn", "3123", "34"); // Creating new product with sent specification.
-        Product product = databaseController.getProduct(request.getParameter("product-name"));   //
-        product.setQuantity(request.getParameter("quantity"));
-        productList.add(product);
+        for (int i = 1; i < 5; i++) {
+            if (!request.getParameter("product-name" + i).equals("") && !request.getParameter("quantity" + i).equals("")) {
+                productList.add(getProductFromRequest(String.valueOf(i), request));
+            }
+        }
+
         invoice.setListOfProducts(productList);
-
-
-        //   productList.addAll(databaseController.getProductsList()); // Adding all products from database to created list.
-
-
-
-        //databaseController.addProductToDatabase(product); // Adding new product to database.
-
 
         ByteArrayOutputStream byteArrayOutputStream = new PDFCreator().create(invoice); // Creating PDF with list of products and saving it as output.
 
@@ -57,7 +71,7 @@ public class InvoiceServlet extends HttpServlet {
     }
 
 
-    public Invoice getInvoiceFromRequest(HttpServletRequest request){
+    public Invoice getInvoiceFromRequest(HttpServletRequest request) {
         Invoice invoice = new Invoice();
         invoice.setFaktura(request.getParameter("faktura"));
         invoice.setNumerFaktury(request.getParameter("numer-faktury"));
@@ -89,4 +103,19 @@ public class InvoiceServlet extends HttpServlet {
         return invoice;
     }
 
+    private Product getProductFromRequest(String number, HttpServletRequest request) {
+        DBController databaseController = new DBController();
+        Product product = databaseController.getProduct(request.getParameter("product-name" + number));   //
+        product.setQuantity(request.getParameter("quantity" + number));
+        return product;
+    }
+
+    private void addProduct(HttpServletRequest request) {
+        String name = request.getParameter("name");
+        String netto = request.getParameter("netto");
+        String vat = request.getParameter("vat");
+        Product product = new Product(name, netto, vat);
+        DBController dbController = new DBController();
+        dbController.addProductToDatabase(product);
+    }
 }
