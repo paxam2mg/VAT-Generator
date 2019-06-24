@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Generator faktur</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+
+<p><h2>Generator faktur VAT</h2></p>
+
+<form method="post" action="invoice">
+    Faktura VAT: <input type="text" id="faktura-input" name="faktura"/> <br> <br>
+    Faktura nr #: <input type="text" id="numerfaktury" name="numer-faktury"/> <br> <br>
+
+    Data wystawienia faktury: <input type="text" id="data-w-faktury" name="data-w-faktury"/> <br> <br>
+    Miejsce wystawienia faktury: <input type="text" id="miejsce-faktury" name="miejsce-faktury"/> <br> <br>
+    Data: <input type="date" id="data-input" name="data"/>
+    <SELECT>
+        <OPTION Value="Wybor">Wybierz typ daty</OPTION>
+        <OPTION Value="Data dostawy">Data dokonania dostawy towarów</OPTION>
+        <OPTION Value="Data uslugi">Data wykonania usługi</OPTION>
+        <OPTION Value="Data sprzedazy">Data sprzedaży</OPTION>
+    </SELECT>
+    <br> <br>
+
+
+    Nazwa firmy sprzedawca: <input type="text" id="say-s-hello-text-input" name="name-s"/> <br> <br>
+    Adres firmy sprzedawca: <input type="text" id="adres-s-input" name="adres-s"/> <br> <br>
+    Adres firmy cd. sprzedawca: <input type="text" id="adres-s2-input" name="adres-s2"/> <br> <br>
+    NIP sprzedawca: <input type="text" id="NIP-input" name="NIP-s"/> <br> <br>
+    REGON sprzedawca: <input type="text" id="NIP-input" name="REGON-s"/> <br> <br>
+    Dodatkowe informacje: <input type="text" id="dodatek-input" name="dodatek-s"/> <br> <br>
+
+    Waluta: <input type="text" id="waluta-input" name="waluta"/>
+    <SELECT>
+        <OPTION Value="PLN">PLN</OPTION>
+        <OPTION Value="USD">USD</OPTION>
+        <OPTION Value="EUR">EUR</OPTION>
+    </SELECT>
+    <br> <br>
+
+    Razem Netto: <input type="text" id="value-text-input" name="netto-price"/> <br> <br>
+    Razem VAT <input type="text" id="vat-text-input" name="vat"/>% <br> <br>
+
+    Nazwa firmy nabywca: <input type="text" id="say-s-hello-text-input" name="name-n"/> <br> <br>
+    Adres firmy nabywca: <input type="text" id="adres-s-input" name="adres-n"/> <br> <br>
+    Adres firmy cd. nabywca: <input type="text" id="adres-s2-input" name="adres-n2"/> <br> <br>
+    NIP nabywca: <input type="text" id="NIP-input" name="NIP-n"/> <br> <br>
+    REGON nabywca: <input type="text" id="REGON-input" name="REGON-n"/> <br> <br>
+    Dodatkowe informacje: <input type="text" id="dodatek-input" name="dodatek-n"/> <br> <br>
+
+    <input type="submit" id="send-button" value="Send"/>
+
+</form>
+</body>
+</html>

@@ -23,16 +23,21 @@ public class InvoiceServlet extends HttpServlet {
 
         Invoice invoice = getInvoiceFromRequest(request);
 
-        Product product = new Product("", "", ""); // Creating new product with sent specification.
-
         DBController databaseController = new DBController();
-
-        databaseController.addProductToDatabase(product); // Adding new product to database.
-
         List<Product> productList = new ArrayList<>(); // Creating empty list of products.
-        productList.addAll(databaseController.getProductsList()); // Adding all products from database to created list.
 
-        ByteArrayOutputStream byteArrayOutputStream = new InvoiceCreator().create(invoice); // Creating PDF with list of products and saving it as output.
+//        Product product = new Product("nn", "3123", "34", "1"); // Creating new product with sent specification.
+//        productList.add(product);
+
+        productList.addAll(databaseController.getProductsList()); // Adding all products from database to created list.
+        invoice.setListOfProducts(productList);
+
+
+
+        //databaseController.addProductToDatabase(product); // Adding new product to database.
+
+
+        ByteArrayOutputStream byteArrayOutputStream = new PDFCreator().create(invoice); // Creating PDF with list of products and saving it as output.
 
         response.setContentType("application/pdf");
         response.addHeader("Content-Disposition", "attachment; filename=" + "Invoice-" + "" + ".pdf");

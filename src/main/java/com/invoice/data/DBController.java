@@ -63,8 +63,9 @@ public class DBController {
         }
 
         try {
+            int counter = 1;
             while (result.next()) {
-                Product product = new Product(result.getString(2), result.getString(3), result.getString(4));
+                Product product = new Product(result.getString(2), result.getString(3), result.getString(4), String.valueOf(counter++));
                 productsList.add(product);
             }
         } catch (SQLException e) {

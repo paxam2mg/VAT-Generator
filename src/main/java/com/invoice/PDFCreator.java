@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class InvoiceCreator {
+public class PDFCreator {
 
     private Invoice invoice;
     private PDPageContentStream content;
@@ -60,12 +60,14 @@ public class InvoiceCreator {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }catch (NullPointerException e){
+            e.printStackTrace();
         }
 
         return byteArrayOutputStream;
     }
 
-    private void printHeader() throws IOException {
+    private void printHeader() throws IOException,NullPointerException {
         PDFPrinter justTextPrinter = new PDFPrinter(content, fontBasic, 9);
         PDFPrinter headerTextPrinter = new PDFPrinter(content, fontBasic, 12);
         PDFPrinter bigHeaderTextPrinter = new PDFPrinter(content, fontBasic, 15);
@@ -91,7 +93,7 @@ public class InvoiceCreator {
 
     }
 
-    private void printTable() throws IOException {
+    private void printTable() throws IOException,NullPointerException {
         PDFPrinter justTextPrinter = new PDFPrinter(content, fontBasic, 9);
         PDFPrinter boldTextPrinter = new PDFPrinter(content, fontBold, 9);
 
@@ -130,7 +132,7 @@ public class InvoiceCreator {
 
     }
 
-    private void printSummaryTable() throws IOException {
+    private void printSummaryTable() throws IOException,NullPointerException {
         PDFPrinter justTextPrinter = new PDFPrinter(content, fontBasic, 9);
         PDFPrinter boldTextPrinter = new PDFPrinter(content, fontBold, 9);
         PDFPrinter bigTextPrinter = new PDFPrinter(content, fontBold, 13);
@@ -149,14 +151,15 @@ public class InvoiceCreator {
         bigTextPrinter.putText(300, lastProductsRowPosition + movement , "Razem do zaplaty:");
         bigTextPrinter.putTextToTheRight(550, lastProductsRowPosition + movement, totalBruttoPrice.setScale(2, BigDecimal.ROUND_HALF_DOWN).toString() + " "+ invoice.getWaluta());
 
+
     }
 
-    private void printPaymentInfo() throws IOException {
+    private void printPaymentInfo() throws IOException,NullPointerException {
         PDFPrinter justTextPrinter = new PDFPrinter(content, fontBasic, 9);
 
     }
 
-    private void printSignPlace() throws IOException {
+    private void printSignPlace() throws IOException,NullPointerException {
 
         PDFPrinter justTextPrinter = new PDFPrinter(content, fontBasic, 8);
 

@@ -11,7 +11,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InvoiceCreatorTest {
+public class PDFCreatorTest {
 
     @Test
     public void exportPDF() {
@@ -56,10 +56,10 @@ public class InvoiceCreatorTest {
 
         invoice.setListOfProducts(getProductList());
 
-        InvoiceCreator invoiceCreator = new InvoiceCreator();
+        PDFCreator PDFCreator = new PDFCreator();
 
 
-        return invoiceCreator.create(invoice);
+        return PDFCreator.create(invoice);
     }
 
     private List<Product> getProductList(){

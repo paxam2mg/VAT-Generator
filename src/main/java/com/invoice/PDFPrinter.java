@@ -34,6 +34,7 @@ public class PDFPrinter {
             contents.newLineAtOffset(x, y);
             contents.showText(text);
             contents.endText();
+
         }
     }
 
