@@ -1,5 +1,7 @@
 package com.invoice.data;
 
+import com.invoice.model.Product;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,15 @@
 package com.invoice;
 
+import com.invoice.model.Invoice;
+import com.invoice.model.Product;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InvoiceCreatorTest {
 
@@ -38,7 +42,7 @@ public class InvoiceCreatorTest {
         invoice.setREGONS("343414112");
         invoice.setDodatekS("dodatek-s");
 
-        invoice.setWaluta("waluta");
+        invoice.setWaluta("PLN");
 
         invoice.setNettoPrice("netto-price");
         invoice.setVat("vat");
@@ -50,11 +54,22 @@ public class InvoiceCreatorTest {
         invoice.setREGONN("13441331");
         invoice.setDodatekN("dodatek-n");
 
+        invoice.setListOfProducts(getProductList());
+
         InvoiceCreator invoiceCreator = new InvoiceCreator();
 
 
         return invoiceCreator.create(invoice);
     }
 
+    private List<Product> getProductList(){
+        List<Product> listOfProducts = new ArrayList<>();
+        listOfProducts.add(new Product("Krzeslo", "100", "23", "2"));
+        listOfProducts.add(new Product("Krzeslo", "100", "23", "2"));
+        listOfProducts.add(new Product("Krzeslo", "100", "23", "2"));
+        listOfProducts.add(new Product("Wazon", "152.55", "7", "3"));
+        listOfProducts.add(new Product("Wazon", "152.55", "7", "3"));
+        return listOfProducts;
+    }
 
 }

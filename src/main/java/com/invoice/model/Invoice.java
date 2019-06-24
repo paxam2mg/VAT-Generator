@@ -1,4 +1,8 @@
-package com.invoice;
+package com.invoice.model;
+
+import com.invoice.model.Product;
+
+import java.util.List;
 
 public class Invoice {
 
@@ -22,6 +26,15 @@ public class Invoice {
     private String NIPN;
     private String REGONN;
     private String dodatekN;
+    private List<Product> listOfProducts;
+
+    public List<Product> getListOfProducts() {
+        return listOfProducts;
+    }
+
+    public void setListOfProducts(List<Product> listOfProducts) {
+        this.listOfProducts = listOfProducts;
+    }
 
     public String getFaktura() {
         return faktura;

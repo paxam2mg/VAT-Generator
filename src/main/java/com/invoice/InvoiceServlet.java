@@ -1,8 +1,8 @@
 package com.invoice;
 
 import com.invoice.data.DBController;
-import com.invoice.data.Product;
-import org.apache.pdfbox.pdmodel.PDDocument;
+import com.invoice.model.Invoice;
+import com.invoice.model.Product;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
