@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.invoice.InvoiceCreatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-24T09:14:20" hostname="DESKTOP-UABO1K2" time="0.475">
-  <properties/>
-  <testcase name="exportPDF" classname="com.invoice.InvoiceCreatorTest" time="0.475"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
