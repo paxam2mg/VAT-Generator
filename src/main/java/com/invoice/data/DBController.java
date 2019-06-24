@@ -39,6 +39,47 @@ public class DBController {
         }
     }
 
+    public Product getProducts(String name) {
+
+        Product product;
+
+        Connection connection = getConnection();
+        Statement statement;
+        ResultSet result = null;
+
+
+        try {
+            statement = connection.createStatement();
+        } catch (SQLException e) {
+            System.out.println("Error. Can not create the statement: " + e);
+            return null;
+        }
+
+        try {
+            result = statement.executeQuery("SELECT * FROM products WHERE name = '" + name + "'");
+        } catch (SQLException e) {
+            System.out.println("Error. Problem with executeQuery: " + e);
+            return null;
+        }
+
+        try {
+            product = new Product(result.getString(2), result.getString(3), result.getString(4));
+
+        } catch (SQLException e) {
+            System.out.println("Error. Problem reading data: " + e);
+            return null;
+        }
+
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Error. Problem with closing connection: " + e);
+            return null;
+        }
+
+        return product;
+    }
+
     public List<Product> getProductsList() {
 
         List<Product> productsList = new ArrayList<>();
@@ -55,7 +96,7 @@ public class DBController {
             return null;
         }
 
-        try  {
+        try {
             result = statement.executeQuery("SELECT * FROM products");
         } catch (SQLException e) {
             System.out.println("Error. Problem with executeQuery: " + e);

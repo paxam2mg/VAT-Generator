@@ -26,10 +26,13 @@ public class InvoiceServlet extends HttpServlet {
         DBController databaseController = new DBController();
         List<Product> productList = new ArrayList<>(); // Creating empty list of products.
 
-//        Product product = new Product("nn", "3123", "34", "1"); // Creating new product with sent specification.
-//        productList.add(product);
+        //Product product = new Product("nn", "3123", "34"); // Creating new product with sent specification.
+        Product product = databaseController.getProducts("Chair");   //
+        product.setQuantity(2);
+        productList.add(product);
 
-        productList.addAll(databaseController.getProductsList()); // Adding all products from database to created list.
+
+     //   productList.addAll(databaseController.getProductsList()); // Adding all products from database to created list.
         invoice.setListOfProducts(productList);
 
 

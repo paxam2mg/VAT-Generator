@@ -9,14 +9,6 @@ public class Product {
     private String VAT;
     private String quantity;
 
-    public String getQuantity() {
-            return quantity;
-    }
-
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
-    }
-
     public Product() {
     }
 
@@ -32,6 +24,17 @@ public class Product {
         this.nettoPrice = nettoPrice;
         this.VAT = VAT;
         this.quantity = quantity;
+    }
+
+    public String getQuantity() {
+            return quantity;
+    }
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = String.valueOf(quantity);
     }
 
     public String getName() {
