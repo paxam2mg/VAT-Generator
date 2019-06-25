@@ -65,23 +65,39 @@ pageEncoding="UTF-8" %>
         %>
     </table>
 </div>
-<br>
+
+<div>
 <form method="post" action="invoice">
 
-    Nazwa produktu: <input type="text"  name="name"/> <br>
-    Cena Netto: <input type="text" name="netto"/> <br>
-    Vat: <input type="text" name="vat"/> <br>
 
-    <button type="submit" name="add">Add</button>
+<table1>
+        <tr>
+            <td>Nazwa produktu: <input type="text"  name="name"/></td>
+            <td>Cena Netto: <input type="text" name="netto"/></td>
+            <td>Vat: <input type="text" name="vat"/></td>
+            <td><button type="submit" name="add">Add</button></td>
+        </tr>
+</table1>
 
 </form>
-<br>
+</div>
+<br> <br>
+<div>
 <form method="post" action="invoice">
-    Faktura VAT: <input type="text" id="faktura-input" name="faktura"/> <br> <br>
-    Faktura nr #: <input type="text" id="numerfaktury" name="numer-faktury"/> <br> <br>
+<table2>
+<tr>
+    <td>Faktura VAT: <input type="text" id="faktura-input" name="faktura"/></td>
+    <td>Faktura nr #: <input type="text" id="numerfaktury" name="numer-faktury"/></td>
+     <td>Miejsce wystawienia faktury: <input type="text" id="miejsce-faktury" name="miejsce-faktury"/></td> <br> <br>
+</tr>
+<tr>
+    <td>Data wystawienia faktury: <input type="date" id="data-w-faktury" name="data-w-faktury"/></td>
 
-    Data wystawienia faktury: <input type="date" id="data-w-faktury" name="data-w-faktury"/> <br> <br>
-    Miejsce wystawienia faktury: <input type="text" id="miejsce-faktury" name="miejsce-faktury"/> <br> <br>
+</tr>
+</table2>
+<br> <br>
+</div>
+<div>
     <SELECT name="typ-daty">
         <OPTION Value="Wybor">Wybierz typ daty</OPTION>
         <OPTION Value="Data dostawy">Data dokonania dostawy towarów</OPTION>
@@ -104,32 +120,61 @@ pageEncoding="UTF-8" %>
     </SELECT>
     <br> <br>
     <br> <br>
+</div>
+<div>
+<table3>
+    <tr>
+    <td>Nazwa produktu: <input type="text"  name="product-name1"/></td>
+    <td> Ilość: <input type="text" name="quantity1"/></td> <br> <br>
+    </tr>
+    <tr>
+    <td>Nazwa produktu: <input type="text"  name="product-name2"/></td>
+    <td> Ilość: <input type="text" name="quantity2"/></td> <br> <br>
+    </tr>
+        <tr>
+    <td>Nazwa produktu: <input type="text"  name="product-name3"/></td>
+    <td> Ilość: <input type="text" name="quantity3"/></td> <br> <br>
+    </tr>
+    <tr>
+    <td>Nazwa produktu: <input type="text"  name="product-name4"/></td>
+    <td> Ilość: <input type="text" name="quantity4"/></td> <br> <br>
+    </tr>
 
-    Nazwa produktu: <input type="text"  name="product-name1"/> <br> <br>
-    Ilość: <input type="text" name="quantity1"/> <br> <br>
-    Nazwa produktu: <input type="text"  name="product-name2"/> <br> <br>
-    Ilość: <input type="text" name="quantity2"/> <br> <br>
-    Nazwa produktu: <input type="text"  name="product-name3"/> <br> <br>
-    Ilość: <input type="text" name="quantity3"/> <br> <br>
-    Nazwa produktu: <input type="text"  name="product-name4"/> <br> <br>
-    Ilość: <input type="text" name="quantity4"/> <br> <br>
+<br> <br>
+</table3>
+
+</div>
+<div>
+<table4>
+<tr>
+    <td>Nazwa firmy sprzedawca: <input type="text"  name="name-s"/></td>
+    <td>Nazwa firmy nabywca: <input type="text" id="say-s-hello-text-input" name="name-n"/></td> <br> <br>
+</tr>
+<tr>
+    <td>Adres firmy sprzedawca: <input type="text" name="adres-s"/></td>
+    <td>Adres firmy nabywca: <input type="text" id="adres-s-input" name="adres-n"/></td> <br> <br>
+</tr>
+<tr>
+    <td>Adres firmy cd. sprzedawca: <input type="text"  name="adres-s2"/></td>
+    <td>Adres firmy cd. nabywca: <input type="text" id="adres-s2-input" name="adres-n2"/></td> <br> <br>
+</tr>
+<tr>
+    <td>NIP sprzedawca: <input type="text"  name="NIP-s"/></td>
+    <td>NIP nabywca: <input type="text" id="NIP-input" name="NIP-n"/></td> <br> <br>
+</tr>
+<tr>
+    <td>REGON sprzedawca: <input type="text"  name="REGON-s"/></td>
+    <td>REGON nabywca: <input type="text" id="REGON-input" name="REGON-n"/></td> <br> <br>
+</tr>
+<tr>
+    <td>Dodatkowe informacje: <input type="text"  name="dodatek-s"/></td>
+    <td>Dodatkowe informacje: <input type="text" id="dodatek-input" name="dodatek-n"/></td>
+</tr>
+
     <br> <br>
+     <br> <br>
 
-    Nazwa firmy sprzedawca: <input type="text"  name="name-s"/> <br> <br>
-    Adres firmy sprzedawca: <input type="text" name="adres-s"/> <br> <br>
-    Adres firmy cd. sprzedawca: <input type="text"  name="adres-s2"/> <br> <br>
-    NIP sprzedawca: <input type="text"  name="NIP-s"/> <br> <br>
-    REGON sprzedawca: <input type="text"  name="REGON-s"/> <br> <br>
-    Dodatkowe informacje: <input type="text"  name="dodatek-s"/> <br> <br>
-
-    <br> <br>
-    Nazwa firmy nabywca: <input type="text" id="say-s-hello-text-input" name="name-n"/> <br> <br>
-    Adres firmy nabywca: <input type="text" id="adres-s-input" name="adres-n"/> <br> <br>
-    Adres firmy cd. nabywca: <input type="text" id="adres-s2-input" name="adres-n2"/> <br> <br>
-    NIP nabywca: <input type="text" id="NIP-input" name="NIP-n"/> <br> <br>
-    REGON nabywca: <input type="text" id="REGON-input" name="REGON-n"/> <br> <br>
-    Dodatkowe informacje: <input type="text" id="dodatek-input" name="dodatek-n"/> <br> <br>
-
+</table4>
     <input type="submit" id="send-button" value="Send"/>
 
 </form>
